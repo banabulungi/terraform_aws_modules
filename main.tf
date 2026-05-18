@@ -1,6 +1,16 @@
+module "networking" {
+  source = "./modules/networking"
 
+  project_name       = var.project_name
+  environment        = var.environment
+  vpc_cidr           = var.vpc_cidr
+  public_subnet_cidr = var.public_subnet_cidr
+}
 
-resource "aws_instance" "example" {
-  ami           = "ami-0fb653ca2d3203ac1"
-  instance_type = "t2.micro"
+module "s3_bucket" {
+  source = "./modules/s3_bucket"
+
+  bucket_name  = var.s3_bucket_name
+  project_name = var.project_name
+  environment  = var.environment
 }

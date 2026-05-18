@@ -1,0 +1,7 @@
+aws_region        = "us-west-2"
+project_name       = "terraform-learning"
+environment        = "dev"
+vpc_cidr           = "10.10.0.0/16"
+public_subnet_cidr = "10.10.1.0/24"
+
+s3_bucket_name  = "banabulungi-terraform-learning-2026"
