@@ -1,3 +1,6 @@
+# This file contains data source lookups for existing AWS resources
+# Used to reference default VPC and subnets
+
 data "aws_vpc" "default" {
   default = true
 
