@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "s3_bucket_name_biniyam" {
+resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
 
   tags = {
@@ -7,16 +7,16 @@ resource "aws_s3_bucket" "s3_bucket_name_biniyam" {
   }
 }
 
-resource "aws_s3_bucket_versioning" "s3_bucket_version_1" {
-  bucket = aws_s3_bucket.s3_bucket_name_biniyam.id
+resource "aws_s3_bucket_versioning" "versioning" {
+  bucket = aws_s3_bucket.bucket.id
 
   versioning_configuration {
     status = "Enabled"
   }
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "s3_bucket_encryption_1" {
-  bucket = aws_s3_bucket.s3_bucket_name_biniyam.id
+resource "aws_s3_bucket_server_side_encryption_configuration" "encryption" {
+  bucket = aws_s3_bucket.bucket.id
 
   rule {
     apply_server_side_encryption_by_default {
@@ -25,8 +25,8 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "s3_bucket_encrypt
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "s3_bucket_public_access_1" {
-  bucket = aws_s3_bucket.s3_bucket_name_biniyam.id
+resource "aws_s3_bucket_public_access_block" "public_access_block" {
+  bucket = aws_s3_bucket.bucket.id
 
   block_public_acls       = true
   block_public_policy     = true
