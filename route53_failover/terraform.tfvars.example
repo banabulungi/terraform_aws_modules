@@ -1,0 +1,19 @@
+aws_region    = "us-west-2"
+project_name  = "mom-and-pop"
+environment   = "dev"
+
+# Route53 hosted zone ID (e.g. Z123456ABCDEFG)
+hosted_zone_id = "ZONEID_EXAMPLE"
+
+# Fully-qualified domain to configure (example: www.example.com)
+domain_name    = "www.example.com"
+
+# Public IP addresses of your two existing web servers (primary and secondary)
+primary_ip     = "203.0.113.10"
+secondary_ip   = "203.0.113.11"
+
+# HTTP path that Route53 will health check
+health_check_path = "/"
+
+# Email that will receive SNS notifications when primary becomes unhealthy
+alert_email    = "ops@example.com"
