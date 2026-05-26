@@ -10,7 +10,7 @@ module "networking" {
 module "s3_bucket" {
   source = "./modules/s3_bucket"
 
-  bucket_name  = var.s3_bucket_name
+  bucket_name  = var.bucket_name
   project_name = var.project_name
   environment  = var.environment
 }
