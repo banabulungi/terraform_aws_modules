@@ -28,7 +28,7 @@ variable "public_subnet_cidr" {
   default     = "10.10.1.0/24"
 }
 
-variable "s3_bucket_name" {
+variable "bucket_name" {
   description = "Globally unique S3 bucket name."
   type        = string
 }
